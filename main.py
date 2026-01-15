@@ -95,6 +95,7 @@ async def chat_endpoint(request: Request):
         return {"reply": "Invalid input"}
 
     return {"reply": chat(data["chatInput"], data["sessionId"])}
+
 @app.get("/chat")
 async def chat_endpoint(request: Request):
     data = await request.json()
