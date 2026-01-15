@@ -95,6 +95,13 @@ async def chat_endpoint(request: Request):
         return {"reply": "Invalid input"}
 
     return {"reply": chat(data["chatInput"], data["sessionId"])}
+@app.get("/chat")
+async def chat_endpoint(request: Request):
+    data = await request.json()
+    if not data.get("chatInput") or not data.get("sessionId"):
+        return {"reply": "Invalid input"}
+
+    return {"reply": chat(data["chatInput"], data["sessionId"])}
 if __name__ == "__main__":
     import uvicorn
 
