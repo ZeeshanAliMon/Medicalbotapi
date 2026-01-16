@@ -42,7 +42,7 @@ def get_embedding(text: str):
 HF_API_KEY = os.environ["HF_API_KEY"]
 llm_client = OpenAI(base_url="https://router.huggingface.co/v1", api_key=HF_API_KEY)
 MODEL = "meta-llama/Llama-3.1-8B-Instruct"
-SYSTEM_PROMPT = "You are a helpful medical assistant. You will short answer the questions if the question is according to context , if its not according to context just say 'its not my field of expertise'"
+SYSTEM_PROMPT = "You are a helpful medical assistant. You will short answer the questions if the question is according to context , if its not according to context just say 'its not my field of expertise' At start of your reply you will say 'According to Gale Encyclopedia of medicine'"
 
 # -----------------------------
 # SESSION MEMORY
